@@ -172,6 +172,9 @@ def my_func(x):  # 定义函数
 
 
 my_gen = my_func(5)  # 调用函数生成器
+print(my_gen)
+print(my_gen.__next__())  # 输出生成器的第一个元素
+print(type(my_gen))
 
 print("-----------------------")
 
@@ -235,7 +238,7 @@ def repeat(n):
         def wrapper(*args, **kwargs):  # 定义装饰器函数
             for _ in range(n):  # 重复执行 n 次
                 print(f"执行 {n} 次")
-                result = func(*args, **kwargs)  # 调用被装饰函数
+                result = func(*args, **kwargs)  # 调用被装饰的函数
                 print(result)
                 print(type(result))
             return result
